@@ -41,7 +41,7 @@ body {
 #data-display p {
     margin: 5px 0;
     line-height: 1.6;
-    color: #fff;
+    color: #0f0f0f;
 }
 
 @media (max-width: 600px) {
