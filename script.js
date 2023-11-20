@@ -75,3 +75,56 @@ function showError(error) {
     const display = document.getElementById('data-display');
     display.innerText = error;
 }
+
+// Initialize Chart.js
+var ctx = document.getElementById('sunriseSunsetChart').getContext('2d');
+var sunriseSunsetChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [], // Days
+        datasets: [{
+            label: 'Sunrise Time',
+            data: [], // Sunrise times
+            borderColor: 'rgba(255, 159, 64, 1)',
+            borderWidth: 1
+        }, {
+            label: 'Sunset Time',
+            data: [], // Sunset times
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: false
+                }
+            }]
+        }
+    }
+});
+
+// Update Chart Data with Mock Data for Testing
+function updateChart(dataArray) {
+    // Using mock data for testing
+    let mockData = [
+        { sunrise: "6:30:00 AM", sunset: "7:45:00 PM" },
+        { sunrise: "6:31:00 AM", sunset: "7:44:00 PM" },
+        { sunrise: "6:32:00 AM", sunset: "7:43:00 PM" },
+        // ... more mock data
+    ];
+
+    sunriseSunsetChart.data.labels = mockData.map((_, index) => `Day ${index + 1}`);
+    sunriseSunsetChart.data.datasets[0].data = mockData.map(data => convertTimeToDecimal(data.sunrise));
+    sunriseSunsetChart.data.datasets[1].data = mockData.map(data => convertTimeToDecimal(data.sunset));
+    sunriseSunsetChart.update();
+}
+
+// Helper function to convert time string to decimal
+function convertTimeToDecimal(timeStr) {
+    let [time, modifier] = timeStr.split(' ');
+    let [hours, minutes] = time.split(':').map(Number);
+    hours += (modifier === 'PM' && hours !== 12) ? 12 : 0;
+    return hours + minutes / 60;
+}
