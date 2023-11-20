@@ -1,6 +1,6 @@
 body {
     background: #c94848;
-    color: #f3ebeb;
+    color: #f70505;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: rgb(224, 47, 198);
+    background: rgb(235, 221, 233);
     border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
@@ -41,7 +41,7 @@ body {
 #data-display p {
     margin: 5px 0;
     line-height: 1.6;
-    color: #0f0f0f;
+    color: #f7eeee;
 }
 
 @media (max-width: 600px) {
