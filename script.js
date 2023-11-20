@@ -67,17 +67,18 @@ function fetchDataForDate(latitude, longitude, date, dayIndex) {
 
 function updateUI(data, dayIndex, date) {
     let display = document.getElementById('data-display');
-    let dayData = `<div>
+    let dayData = `<div class="day-data">
         <h3>Day ${dayIndex + 1} (${date}):</h3>
-        <p>Sunrise: ${data.sunrise}</p>
-        <p>Sunset: ${data.sunset}</p>
-        <p>Dawn: ${data.dawn}</p>
-        <p>Dusk: ${data.dusk}</p>
-        <p>Day Length: ${data.day_length}</p>
-        <p>Solar Noon: ${data.solar_noon}</p>
+        <p><strong>Sunrise:</strong> ${data.sunrise}</p>
+        <p><strong>Sunset:</strong> ${data.sunset}</p>
+        <p><strong>Dawn:</strong> ${data.dawn}</p>
+        <p><strong>Dusk:</strong> ${data.dusk}</p>
+        <p><strong>Day Length:</strong> ${data.day_length}</p>
+        <p><strong>Solar Noon:</strong> ${data.solar_noon}</p>
     </div>`;
     display.innerHTML += dayData;
 }
+
 
 function showError(error) {
     const display = document.getElementById('data-display');
