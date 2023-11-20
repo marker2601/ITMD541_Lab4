@@ -1,6 +1,6 @@
 body {
     background: #c94848;
-    color: #0e0d0d;
+    color: #f3ebeb;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: rgb(230, 217, 228);
+    background: rgb(247, 32, 214);
     border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
