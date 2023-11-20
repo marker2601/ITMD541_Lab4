@@ -15,12 +15,12 @@ body {
     background: rgb(230, 217, 228);
     border-radius: 1em;
 }
-.chart-container {
+/* .chart-container {
     margin: 20px auto;
     width: 80%;
     max-width: 700px;
     height: 400px;
-}
+} */
 @media (max-width: 600px) {
     .chart-container {
         width: 100%;
