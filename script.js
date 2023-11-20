@@ -37,17 +37,38 @@ function handleLocationSearch(event) {
 }
 
 function fetchSunriseSunset(latitude, longitude) {
-    const url = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}`;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => updateUI(data.results))
-    .catch(() => showError("Error fetching sunrise and sunset data."));
+    const today = new Date().toISOString().split('T')[0];
+    const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0];
+
+    fetchDataForDate(latitude, longitude, today, 'today');
+    fetchDataForDate(latitude, longitude, tomorrow, 'tomorrow');
 }
 
-function updateUI(data) {
-    const display = document.getElementById('data-display');
-    display.innerHTML = `Sunrise: ${data.sunrise}<br>Sunset: ${data.sunset}<br>Day Length: ${data.day_length}`;
-    // Add more data fields here
+function fetchDataForDate(latitude, longitude, date, prefix) {
+    const url = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=${date}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'OK') {
+            updateUI(data.results, prefix);
+        } else {
+            showError("Error fetching data.");
+        }
+    })
+    .catch(() => showError("Error fetching data."));
+}
+
+function updateUI(data, prefix) {
+    document.getElementById(`sunrise-${prefix}`).innerText = data.sunrise;
+    document.getElementById(`sunset-${prefix}`).innerText = data.sunset;
+    document.getElementById(`dawn-${prefix}`).innerText = data.dawn;
+    document.getElementById(`dusk-${prefix}`).innerText = data.dusk;
+    document.getElementById(`daylength-${prefix}`).innerText = data.day_length;
+    document.getElementById(`solarnoon-${prefix}`).innerText = data.solar_noon;
+    if (prefix === 'today') {
+        document.getElementById('timezone').innerText = data.timezone;
+    }
+
 }
 
 function showError(error) {
