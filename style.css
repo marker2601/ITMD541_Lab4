@@ -2,24 +2,28 @@ body {
     background: #42212F;
     color: #D1D1D1;
     font-family: Arial, sans-serif;
-  }
-  a {
-    color: #D1D1D1;
-  }
-  .container {
+}
+.container {
     text-align: center;
     max-width: 580px;
     margin: 1em auto;
-  }
-  #data-display {
+}
+#data-display {
     padding: 1em;
     display: block;
     overflow-wrap: break-word;
     background: #662B61;
     border-radius: 1em;
-  }
-
-  @media (max-width: 600px) {
-
-  }
-  
+}
+.chart-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 700px;
+    height: 400px;
+}
+@media (max-width: 600px) {
+    .chart-container {
+        width: 100%;
+        height: 300px;
+    }
+}
