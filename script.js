@@ -69,15 +69,16 @@ function updateUI(data, dayIndex, date) {
     let display = document.getElementById('data-display');
     let dayData = `<div class="day-data">
         <h3>Day ${dayIndex + 1} (${date}):</h3>
-        <p><strong>Sunrise:</strong> ${data.sunrise}</p>
-        <p><strong>Sunset:</strong> ${data.sunset}</p>
-        <p><strong>Dawn:</strong> ${data.dawn}</p>
-        <p><strong>Dusk:</strong> ${data.dusk}</p>
-        <p><strong>Day Length:</strong> ${data.day_length}</p>
-        <p><strong>Solar Noon:</strong> ${data.solar_noon}</p>
+        <p><strong>Sunrise:</strong> <img src="logos/sunrise-today.png" alt="Sunrise Today Logo"> ${data.sunrise}</p>
+        <p><strong>Sunset:</strong> <img src="logos/sunset-today.png" alt="Sunset Today Logo"> ${data.sunset}</p>
+        <p><strong>Dawn:</strong> <img src="logos/dawn-today.png" alt="Dawn Today Logo"> ${data.dawn}</p>
+        <p><strong>Dusk:</strong> <img src="logos/dusk-today.png" alt="Dusk Today Logo"> ${data.dusk}</p>
+        <p><strong>Day Length:</strong> <img src="logos/daylength-today.png" alt="Day Length Today Logo"> ${data.day_length}</p>
+        <p><strong>Solar Noon:</strong> <img src="logos/solarnoon-today.png" alt="Solar Noon Today Logo"> ${data.solar_noon}</p>
     </div>`;
     display.innerHTML += dayData;
 }
+
 
 
 function showError(error) {

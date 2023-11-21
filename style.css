@@ -44,6 +44,13 @@ body {
     color: #f7eeee;
 }
 
+.day-data img {
+    max-width: 50px; /* adjust as needed */
+    max-height: 50px; /* adjust as needed */
+    vertical-align: middle;
+}
+
+
 @media (max-width: 600px) {
     .container, #data-display {
         width: 95%;
