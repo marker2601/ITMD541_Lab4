@@ -45,10 +45,13 @@ body {
 }
 
 .day-data img {
-    max-width: 50px; /* adjust as needed */
-    max-height: 50px; /* adjust as needed */
+    width: 30px; /* adjust as needed */
+    height: 30px; /* adjust as needed */
+    border-radius: 50%; /* creates a circular shape */
+    object-fit: cover; /* ensures the image covers the area without distortion */
     vertical-align: middle;
 }
+
 
 
 @media (max-width: 600px) {
