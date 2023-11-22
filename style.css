@@ -49,7 +49,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 101;
     font-weight: bold;
-    padding-top: 80px;
 }
 
 header {
@@ -77,15 +76,14 @@ header h1 {
 
 .options {
     position: fixed;
-    top: 70px; /* Height of the header (60px) plus 10px for a small gap */
+    top: 60px; /* Same as header's height */
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px; 
-    padding: 15px 0;
+    padding: 5px 0;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 110;
+    z-index: 100; /* Lower than .current-time to keep the time above options */
 }
 
 .options button,
@@ -146,13 +144,16 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .container, #data-display {
-        width: 95%;
-    }
-    #data-display {
+    .options {
         flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px;
     }
-    #data-display {
-        flex-direction: column;
+
+    .options button,
+    .options select,
+    .options input {
+        width: 90%; /* full width minus padding */
+        margin-bottom: 5px; /* space between options on mobile */
     }
 }
