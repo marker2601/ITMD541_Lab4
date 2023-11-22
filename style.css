@@ -24,18 +24,17 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 1200px;
+    margin-top: 120px; /* Adjust this value depending on your header and options bar height */
     padding: 20px;
-    margin: 0 auto; 
     flex-grow: 1; 
     background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
-    z-index: 2; 
-    padding-top: 120px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
 }
 
 .current-time {
@@ -109,16 +108,22 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 20px; /* Add space between options and output content */
 }
 
 #data-display .day-data {
-    background: #e9e9e9;
+    background: #f8f8f8; /* Slightly lighter than #e9e9e9 for better contrast */
     padding: 20px;
-    margin: 10px 0; 
+    margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    flex-basis: calc(33% - 20px);
-    box-sizing: border-box;
+    flex-basis: calc(33% - 40px); /* Adjusted for better spacing */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+#data-display .day-data:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #data-display h3 {
@@ -155,5 +160,15 @@ footer {
     .options input {
         width: 90%; /* full width minus padding */
         margin-bottom: 5px; /* space between options on mobile */
+    }
+    .container, #data-display {
+        width: 95%;
+    }
+    #data-display {
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 170px; /* Increase top margin to account for stacked options */
     }
 }
