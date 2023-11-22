@@ -21,6 +21,7 @@ body {
     justify-content: flex-start; /* Changed from center to flex-start */
     height: 100%;
     scroll-behavior: smooth;
+    padding-top: 80px;
 }
 
 .container {
@@ -52,37 +53,40 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.7); /* Optional: white border for more definition */
 }
 
+
 header {
     width: 100%;
-    position: fixed; /* Keep it fixed at the top */
+    height: 60px; /* Specify a height for the header */
+    position: fixed;
     top: 0;
     left: 0;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
     display: flex;
-    justify-content: center; /* Center the header content horizontally */
-    align-items: center; /* Center the header content vertically */
-    padding: 20px 0; /* Add some padding at the top and bottom */
-    z-index: 1000; /* Make sure the header is above all other content */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 0;
 }
 
 header h1 {
     margin: 0; /* Remove any default margin */
     position: relative; /* Relative positioning */
     font-size: 2.5em; /* Increase size if needed */
-    color: #fff; /* White color for visibility */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+    color: #fff;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 
 .options {
     position: fixed; /* Fix the options div below the header */
-    top: 70px; /* Position below the header */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    z-index: 1000; /* Ensure it's clickable and above other content */
+    top: 60px; /* Position below the header */
+    width: 100%; /* Make the options container full width */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements */
-    gap: 10px; /* Add a gap between elements */
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap items for smaller screens */
+    padding: 10px 0; /* Add some vertical padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for separation */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    z-index: 999; /* Just below the header z-index */
 }
 
 .options button,
