@@ -21,7 +21,7 @@ body {
     justify-content: flex-start; /* Changed from center to flex-start */
     height: 100%;
     scroll-behavior: smooth;
-    padding-top: 80px;
+    padding-top: 0;
     margin-top: 120px;
 }
 
@@ -40,57 +40,57 @@ body {
 
 .current-time {
     position: fixed;
-    top: 20px;
+    top: 10px; /* Adjust the top position as needed */
     right: 20px;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background for better contrast */
-    color: #ffffff; /* White text color for better visibility */
-    font-size: 1em; /* Adjust font size as needed */
-    padding: 10px 20px;
-    border-radius: 25px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    font-weight: 500; /* Medium font weight */
-    z-index: 10; /* Ensure it's above other elements */
-    border: 2px solid rgba(255, 255, 255, 0.7); /* Optional: white border for more definition */
+    background: rgba(255, 255, 255, 0.7); /* Light background for legibility */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 101; /* Above the header */
+    font-weight: bold;
 }
-
 
 header {
     width: 100%;
     position: fixed; /* Keep it fixed at the top */
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark background for the header */
     color: #fff;
-    padding: 10px 0; /* Add some padding */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     z-index: 100; /* High z-index to keep it above other elements */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 15px 0; /* Adjust padding to give more space */
+    background: rgba(0, 0, 0, 0.6);
 }
 header h1 {
     margin: 0 auto; /* Center the heading */
-    font-size: 2.5em; /* Adjust font size as needed */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    position: relative;
+    font-size: 2.5em; /* Adjust the font size as needed */
+    color: white;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 
 .options {
+    position: fixed;
+    top: 70px; /* Position it right below the header */
     width: 100%;
-    position: fixed; /* Fix the options div below the header */
-    top: 80px; /* Position below the header */
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Wrap items for smaller screens */
-    gap: 10px; /* Space between buttons */
-    z-index: 99; /* Below the header but above other content */
-    padding: 10px 0; /* Padding for aesthetic spacing */
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for visibility */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    gap: 20px; /* Increase gap for bigger appearance */
+    padding: 15px 0; /* Increase padding for taller buttons */
+    background: rgba(255, 255, 255, 0.95); /* Less transparency for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 99;
 }
 
 .options button,
 .options select,
 .options input {
-    padding: 10px;
+    font-size: 1.1em; /* Increase font size for larger buttons */
+    padding: 10px 20px; 
     margin: 0 5px;
     border: 1px solid #ddd; /* Subtle border */
     background: #fff; /* White background */
