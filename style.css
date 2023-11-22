@@ -24,9 +24,7 @@ body {
 }
 
 .container {
-    margin-top: 120px; /* Adjust this value depending on your header and options bar height */
     padding: 20px;
-    flex-grow: 1; 
     background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -34,7 +32,9 @@ body {
     position: relative;
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
+    margin-top: 110px; /* Height of header + options, adjust if necessary */
+    flex-grow: 1;
 }
 
 .current-time {
@@ -83,6 +83,7 @@ header h1 {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 100; /* Lower than .current-time to keep the time above options */
+    height: 50px;
 }
 
 .options button,
@@ -152,7 +153,8 @@ footer {
     .options {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 15px;
+        height: auto; /* The options menu will now wrap and take more vertical space */
+        padding-bottom: 15px; 
     }
 
     .options button,
