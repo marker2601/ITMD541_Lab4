@@ -38,16 +38,16 @@ function handleLocationSearch(event) {
 
 
 function fetchSunriseSunset(latitude, longitude) {
-    // Clear previous data
+
     document.getElementById('data-display').innerHTML = '';
 
     for (let i = 0; i < 7; i++) {
-        // Using setTimeout to respect the API rate limit
+
         setTimeout(() => {
             let date = new Date();
             date.setDate(date.getDate() + i);
             fetchDataForDate(latitude, longitude, date.toISOString().split('T')[0], i);
-        }, i * 500); // 500ms delay between each request
+        }, i * 500); 
     }
 }
 
@@ -89,10 +89,11 @@ function showError(error) {
 function updateTime() {
     const now = new Date();
     const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const timeOptions = { hour: '2-digit', minute: '2-digit' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
     const dateString = now.toLocaleDateString('en-US', dateOptions);
     const timeString = now.toLocaleTimeString('en-US', timeOptions);
     document.getElementById('current-time').innerText = `${dateString} | ${timeString}`;
 }
 setInterval(updateTime, 1000);
+
 
