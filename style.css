@@ -38,11 +38,11 @@ body {
     color: #ff8c00;
 }
 
-#data-display p {
+/* #data-display p {
     margin: 5px 0;
     line-height: 1.6;
     color: #f7eeee;
-}
+} */
 
 .day-data img {
     width: 30px !important;
