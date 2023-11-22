@@ -59,7 +59,7 @@ header {
     left: 0;
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    z-index: 100; 
+    z-index: 80; 
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -85,7 +85,7 @@ header h1 {
     padding: 15px 0;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 99;
+    z-index: 110;
 }
 
 .options button,
