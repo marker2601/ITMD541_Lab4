@@ -63,11 +63,11 @@ header h1 {
 
 .options {
     position: fixed;
-    top: 60px; /* Below the header */
+    top: 60px; 
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px 0; /* Adjust padding as needed */
+    padding: 10px 0;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 100;
@@ -91,7 +91,6 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* The .container margin-top should be header height + options height + any additional padding */
 .container {
     padding: 20px;
     background: rgba(255, 255, 255, 0.95);
@@ -101,7 +100,7 @@ header h1 {
     position: relative;
     width: 80%;
     max-width: 1200px;
-    margin: 110px auto 0; /* Assuming options bar is 50px in height, plus the 60px header height */
+    margin: 110px auto 0;
     flex-grow: 1;
 }
 
@@ -111,12 +110,11 @@ header h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
-    /* Add space between options and output content */
+
 }
 
 #data-display .day-data {
     background: #f8f8f8;
-    /* Slightly lighter than #e9e9e9 for better contrast */
     padding: 20px;
     margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -158,7 +156,7 @@ footer {
     .options {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 20px; /* Add padding to cover contents of options when stacked */
+        padding-bottom: 20px;
     }
     
     .options button,
@@ -169,8 +167,7 @@ footer {
     }
     
     .container {
-        /* Adjust this margin-top so that it is greater than the total height of the header and stacked options */
-        margin-top: 180px; /* Example value, adjust as necessary after inspecting the actual height */
+        margin-top: 180px;
         width: 95%;
     }
     
