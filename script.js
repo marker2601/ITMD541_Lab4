@@ -85,3 +85,9 @@ function showError(error) {
     const display = document.getElementById('data-display');
     display.innerText = error;
 }
+
+function updateTime() {
+    const now = new Date();
+    document.getElementById('current-time').innerText = now.toLocaleString();
+}
+setInterval(updateTime, 1000);

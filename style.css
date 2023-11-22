@@ -1,8 +1,16 @@
-body {
+/* body {
     background: #c94848;
     color: #f70505;
     font-family: Arial, sans-serif;
     padding: 20px;
+} */
+
+body {
+    background: #ececec; /* Updated color */
+    color: #333333; /* Updated color */
+    font-family: 'Open Sans', Arial, sans-serif; /* Updated font */
+    padding: 20px;
+    position: relative;
 }
 
 .container {
@@ -52,6 +60,18 @@ body {
     vertical-align: middle !important;
 }
 
+.current-time {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px;
+}
 
 
 
