@@ -88,6 +88,7 @@ function showError(error) {
 
 function updateTime() {
     const now = new Date();
-    document.getElementById('current-time').innerText = now.toLocaleString();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    document.getElementById('current-time').innerText = now.toLocaleDateString('en-US', options) + ' | ' + now.toLocaleTimeString('en-US');
 }
 setInterval(updateTime, 1000);
