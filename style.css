@@ -33,7 +33,7 @@ body {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 110px; /* Height of header + options, adjust if necessary */
+    margin-top: 210px; /* Height of header + options, adjust if necessary */
     flex-grow: 1;
 }
 
