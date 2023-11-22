@@ -77,7 +77,7 @@ header h1 {
 
 .options {
     position: fixed;
-    top: 60px;
+    top: 70px; /* Height of the header (60px) plus 10px for a small gap */
     width: 100%;
     display: flex;
     justify-content: center;
