@@ -1,44 +1,40 @@
-
-html, body {
+html {
     height: 100%; 
-    margin: 0; 
-    display: flex;
-    flex-direction: column;
+    box-sizing: border-box;
 }
+
+*, *:before, *:after {
+    box-sizing: inherit; 
+}
+
 body {
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column;
+    min-height: 100%;
+    font-family: 'Open Sans', Arial, sans-serif;
     background-image: url('logos/appimage.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #333333;
-    font-family: 'Open Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; 
-    height: 100%;
     scroll-behavior: smooth;
-    padding-top: 0;
-    margin-top: 120px;
-    padding-bottom: 60px;
 }
 
 .container {
     width: 80%;
     max-width: 1200px;
-    margin: 20px auto; 
     padding: 20px;
-    background: rgba(255, 255, 255, 0.95);  
+    margin: 0 auto; 
+    flex-grow: 1; 
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 100px;
-    flex: 1; 
-    padding-bottom: 60px; 
-    
+    position: relative;
+    z-index: 2; 
 }
 
 .current-time {
@@ -131,15 +127,13 @@ header h1 {
 
 footer {
     width: 100%;
-    position: relative;
-    margin-top: auto; 
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: auto; 
 }
-
 
 @media (max-width: 600px) {
     .container, #data-display {
