@@ -1,16 +1,18 @@
 html {
-    height: 100%; 
+    height: 100%;
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit; 
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
-    margin: 0; 
-    padding: 0; 
-    display: flex; 
+    margin: 0;
+    padding: 0;
+    display: flex;
     flex-direction: column;
     min-height: 100%;
     font-family: 'Open Sans', Arial, sans-serif;
@@ -21,20 +23,6 @@ body {
     background-attachment: fixed;
     color: #333333;
     scroll-behavior: smooth;
-}
-
-.container {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 210px; /* Height of header + options, adjust if necessary */
-    flex-grow: 1;
 }
 
 .current-time {
@@ -57,17 +45,17 @@ header {
     left: 0;
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    z-index: 80; 
+    z-index: 100;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 15px 0; 
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
     background: rgba(0, 0, 0, 0.6);
     height: 60px;
 }
+
 header h1 {
-    margin: 0 auto; 
-    position: relative;
+    margin: 0 auto;
     font-size: 2.5em;
     color: white;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
@@ -75,24 +63,23 @@ header h1 {
 
 .options {
     position: fixed;
-    top: 60px; /* Same as header's height */
+    top: 60px; /* Below the header */
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5px 0;
+    padding: 10px 0; /* Adjust padding as needed */
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Lower than .current-time to keep the time above options */
-    height: 50px;
+    z-index: 100;
 }
 
 .options button,
 .options select,
 .options input {
-    font-size: 1.1em; 
-    padding: 10px 20px; 
+    font-size: 1.1em;
+    padding: 10px 20px;
     margin: 0 5px;
-    background: #fff; 
+    background: #fff;
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
@@ -104,22 +91,40 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* The .container margin-top should be header height + options height + any additional padding */
+.container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 110px auto 0; /* Assuming options bar is 50px in height, plus the 60px header height */
+    flex-grow: 1;
+}
+
 
 #data-display {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px; /* Add space between options and output content */
+    margin-top: 20px;
+    /* Add space between options and output content */
 }
 
 #data-display .day-data {
-    background: #f8f8f8; /* Slightly lighter than #e9e9e9 for better contrast */
+    background: #f8f8f8;
+    /* Slightly lighter than #e9e9e9 for better contrast */
     padding: 20px;
     margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    flex-basis: calc(33% - 40px); /* Adjusted for better spacing */
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    flex-basis: calc(33% - 40px);
+    /* Adjusted for better spacing */
+    transition: transform 0.2s ease-in-out;
+    /* Smooth hover effect */
 }
 
 #data-display .day-data:hover {
@@ -146,31 +151,30 @@ footer {
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: auto; 
+    margin-top: auto;
 }
 
 @media (max-width: 600px) {
     .options {
         flex-direction: column;
         align-items: center;
-        height: auto; /* The options menu will now wrap and take more vertical space */
-        padding-bottom: 15px; 
+        padding-bottom: 20px; /* Add padding to cover contents of options when stacked */
     }
-
+    
     .options button,
     .options select,
     .options input {
-        width: 90%; /* full width minus padding */
-        margin-bottom: 5px; /* space between options on mobile */
+        width: 90%;
+        margin-bottom: 5px;
     }
-    .container, #data-display {
+    
+    .container {
+        /* Adjust this margin-top so that it is greater than the total height of the header and stacked options */
+        margin-top: 180px; /* Example value, adjust as necessary after inspecting the actual height */
         width: 95%;
     }
+    
     #data-display {
         flex-direction: column;
-    }
-
-    .container {
-        margin-top: 170px; /* Increase top margin to account for stacked options */
     }
 }

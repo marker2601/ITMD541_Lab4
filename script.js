@@ -25,15 +25,15 @@ function handleLocationChange(event) {
 function handleLocationSearch(event) {
     const query = event.target.value;
     fetch(`https://geocode.maps.co/search?q=${query}`)
-    .then(response => response.json())
-    .then(data => {
-        if (data.length > 0) {
-            const { lat, lon } = data[0];
-            fetchSunriseSunset(lat, lon);
-        } else {
-            showError("Location not found.");
-        }
-    }).catch(() => showError("Error fetching location data."));
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                const { lat, lon } = data[0];
+                fetchSunriseSunset(lat, lon);
+            } else {
+                showError("Location not found.");
+            }
+        }).catch(() => showError("Error fetching location data."));
 }
 
 
@@ -47,7 +47,7 @@ function fetchSunriseSunset(latitude, longitude) {
             let date = new Date();
             date.setDate(date.getDate() + i);
             fetchDataForDate(latitude, longitude, date.toISOString().split('T')[0], i);
-        }, i * 500); 
+        }, i * 500);
     }
 }
 

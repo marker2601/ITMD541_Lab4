@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,60 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
     <header>
         <div id="current-time" class="current-time"></div>
         <h1>Global Sunrise & Sunset Tracker</h1>
     </header>
     <div class="options">
-    <button id="current-location">Use Current Location</button>
-    <select id="predefined-locations">
-        <option value="">Select a Location</option>
-        <option value="34.5553,69.2075">🇦🇫 Afghanistan</option>
-        <option value="60.1785,20.1341">🇦🇽 Aland Islands</option>
-        <option value="41.3275,19.8187">🇦🇱 Albania</option>
-        <option value="28.0339,1.6596">🇩🇿 Algeria</option>
-        <option value="-14.2707,-170.1322">🇦🇸 American Samoa</option>
-        <option value="42.5462,1.6016">🇦🇩 Andorra</option>
-        <option value="-11.2027,17.8739">🇦🇴 Angola</option>
-        <option value="18.2206,-63.0686">🇦🇮 Anguilla</option>
-        <option value="17.0608,-61.7964">🇦🇬 Antigua And Barbuda</option>
-        <option value="-38.4161,-63.6167">🇦🇷 Argentina</option>
-        <option value="40.0691,45.0382">🇦🇲 Armenia</option>
-        <option value="12.5211,-69.9683">🇦🇼 Aruba</option>
-        <option value="-25.2744,133.7751">🇦🇺 Australia</option>
-        <option value="47.5162,14.5501">🇦🇹 Austria</option>
-        <option value="40.1431,47.5769">🇦🇿 Azerbaijan</option>
-        <option value="26.0667,50.5577">🇧🇭 Bahrain</option>
- 
-    </select>
-    <input type="text" id="location-search" placeholder="Search for a location">
-</div>
-<div class="container">
-    <div id="data-display">
+        <button id="current-location">Use Current Location</button>
+        <select id="predefined-locations">
+            <option value="">Select a Location</option>
+            <option value="34.5553,69.2075">🇦🇫 Afghanistan</option>
+            <option value="60.1785,20.1341">🇦🇽 Aland Islands</option>
+            <option value="41.3275,19.8187">🇦🇱 Albania</option>
+            <option value="28.0339,1.6596">🇩🇿 Algeria</option>
+            <option value="-14.2707,-170.1322">🇦🇸 American Samoa</option>
+            <option value="42.5462,1.6016">🇦🇩 Andorra</option>
+            <option value="-11.2027,17.8739">🇦🇴 Angola</option>
+            <option value="18.2206,-63.0686">🇦🇮 Anguilla</option>
+            <option value="17.0608,-61.7964">🇦🇬 Antigua And Barbuda</option>
+            <option value="-38.4161,-63.6167">🇦🇷 Argentina</option>
+            <option value="40.0691,45.0382">🇦🇲 Armenia</option>
+            <option value="12.5211,-69.9683">🇦🇼 Aruba</option>
+            <option value="-25.2744,133.7751">🇦🇺 Australia</option>
+            <option value="47.5162,14.5501">🇦🇹 Austria</option>
+            <option value="40.1431,47.5769">🇦🇿 Azerbaijan</option>
+            <option value="26.0667,50.5577">🇧🇭 Bahrain</option>
 
-        <span id="sunrise-today"></span>
-      <span id="sunset-today"></span>
-        <span id="dawn-today"></span>
-    <span id="dusk-today"></span>
-    <span id="daylength-today"></span>
-    <span id="solarnoon-today"></span>
-   <span id="timezone"></span>
-     <span id="sunrise-tomorrow"></span>
-<span id="sunset-tomorrow"></span>
-
+        </select>
+        <input type="text" id="location-search" placeholder="Search for a location">
     </div>
-</div>
+    <div class="container">
+        <div id="data-display">
 
-    <!-- <div class="chart-container">
-        <canvas id="sunriseSunsetChart"></canvas>
+            <span id="sunrise-today"></span>
+            <span id="sunset-today"></span>
+            <span id="dawn-today"></span>
+            <span id="dusk-today"></span>
+            <span id="daylength-today"></span>
+            <span id="solarnoon-today"></span>
+            <span id="timezone"></span>
+            <span id="sunrise-tomorrow"></span>
+            <span id="sunset-tomorrow"></span>
+
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
     <script src="script.js"></script>
     <footer>
         <p>Developed by Jagadeesh © 2023</p>
         <p>Data provided by <a href="https://api.sunrisesunset.io" target="_blank">Sunrise-Sunset API</a></p>
         <p>Geolocation by <a href="https://geocode.maps.co" target="_blank">Maps.co API</a></p>
     </footer>
-    
+
 </body>
+
 </html>
