@@ -120,9 +120,7 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     flex-basis: calc(33% - 40px);
-    /* Adjusted for better spacing */
     transition: transform 0.2s ease-in-out;
-    /* Smooth hover effect */
 }
 
 #data-display .day-data:hover {
@@ -153,7 +151,24 @@ footer {
 }
 
 @media (max-width: 600px) {
+    header {
+        padding: 10px 0; 
+        height: 50px; 
+    }
+    
+    header h1 {
+        font-size: 1.8em; 
+    }
+    
+    .current-time {
+        top: 5px;
+        right: 10px;
+        padding: 5px 8px; 
+        font-size: 0.8em; 
+    }
+    
     .options {
+        top: 50px; 
         flex-direction: column;
         align-items: center;
         padding-bottom: 20px;
@@ -162,16 +177,21 @@ footer {
     .options button,
     .options select,
     .options input {
-        width: 90%;
+        width: 90%; 
         margin-bottom: 5px;
     }
     
     .container {
-        margin-top: 180px;
+        margin-top: 140px; 
         width: 95%;
     }
     
+    #data-display .day-data {
+        flex-basis: 100%; 
+    }
+
     #data-display {
         flex-direction: column;
+        margin-top: 20px;
     }
 }
