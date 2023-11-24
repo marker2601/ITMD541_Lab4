@@ -152,46 +152,52 @@ footer {
 
 @media (max-width: 600px) {
     header {
-        padding: 10px 0; 
-        height: 50px; 
+        /* Reduced padding and smaller height for the header on mobile screens */
+        padding: 5px 0; 
+        height: 40px; /* Adjust the height as needed */
     }
     
     header h1 {
-        font-size: 1.8em; 
+        /* Smaller font size for the title on mobile screens */
+        font-size: 1.6em; /* Adjust the font size as needed */
+        text-shadow: none; /* Text shadow can be removed to clean up appearance */
     }
     
     .current-time {
-        top: 5px;
+        /* Adjust the size and position of the current time display */
+        top: 3px;
         right: 10px;
-        padding: 5px 8px; 
-        font-size: 0.8em; 
+        padding: 2px 5px;
+        font-size: 0.7em; /* Decrease the font size for current time */
+        border-radius: 10px; /* Adjust border-radius for smaller display */
     }
     
     .options {
-        top: 50px; 
+        /* Position the options directly below the smaller header */
+        top: 40px; /* Adjust this value so it's just below the header */
         flex-direction: column;
         align-items: center;
-        padding-bottom: 20px;
+        padding: 10px 0; /* Reduced padding around the options */
     }
     
     .options button,
     .options select,
     .options input {
-        width: 90%; 
-        margin-bottom: 5px;
+        /* Ensure inputs and buttons are comfortably clickable */
+        width: 90%;
+        margin: 5px 0; /* Add space between stacked elements */
+        font-size: 0.9em; /* Adjust font size for better readability */
     }
     
     .container {
-        margin-top: 140px; 
-        width: 95%;
+        /* Adjust the top margin of the container to prevent overlap with options */
+        margin-top: 150px; /* Increase or decrease based on actual header and options height */
+        width: 95%; /* Utilize more of the screen width on mobile */
     }
     
     #data-display .day-data {
-        flex-basis: 100%; 
-    }
-
-    #data-display {
-        flex-direction: column;
-        margin-top: 20px;
+        /* Make each day data take the full container width on mobile */
+        flex-basis: 100%; /* Full width for each day data block */
+        margin: 10px 0; /* Add some vertical space between entries */
     }
 }
