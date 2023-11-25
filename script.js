@@ -49,6 +49,14 @@ function fetchSunriseSunset(latitude, longitude) {
             fetchDataForDate(latitude, longitude, date.toISOString().split('T')[0], i);
         }, i * 500);
     }
+        // Fetch timezone information
+        fetch(`https://timezoneapi.io/api/ip/?${latitude},${longitude}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.meta.code === 200) {
+                document.getElementById('timezone-display').innerText = `Timezone: ${data.data.timezone.id}`;
+            }
+        });
 }
 
 function fetchDataForDate(latitude, longitude, date, dayIndex) {
@@ -65,7 +73,10 @@ function fetchDataForDate(latitude, longitude, date, dayIndex) {
         .catch(() => showError("Error fetching data."));
 }
 
-function updateUI(data, dayIndex, date) {
+function updateUI(data, dayIndex, date, locationName) {
+    if (locationName) {
+        document.getElementById('location-name').innerText = `Location: ${locationName}`;
+    }
     let display = document.getElementById('data-display');
     let dayData = `<div class="day-data">
         <h3>Day ${dayIndex + 1} (${date}):</h3>
