@@ -84,7 +84,7 @@ function updateUI(data, dayIndex, date) {
         <p><img src="logos/dusk-today.png" alt="Dusk Today Logo"><strong>Dusk:</strong>  ${data.dusk}</p>
         <p><img src="logos/daylength-today.png" alt="Day Length Today Logo"> <strong>Day Length:</strong> ${data.day_length}</p>
         <p><img src="logos/solarnoon-today.png" alt="Solar Noon Today Logo"><strong>Solar Noon:</strong>  ${data.solar_noon}</p>
-        <p><strong>Timezone:</strong> ${data.timezone}</p>
+        <p><img src="logos/timezone.png" alt="timezone Logo"><strong>Timezone:</strong> ${data.timezone}</p>
     </div>`;
     display.innerHTML += dayData;
 }
