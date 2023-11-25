@@ -17,10 +17,10 @@ function handleLocationChange(event) {
     const selectedValue = event.target.value;
     if (selectedValue) {
         const [latitude, longitude] = selectedValue.split(',');
-        fetchSunriseSunset(latitude, longitude);
+        const locationName = event.target.options[event.target.selectedIndex].text;
+        fetchSunriseSunset(latitude, longitude, locationName);
     }
 }
-
 
 function handleLocationSearch(event) {
     const query = event.target.value;
@@ -54,6 +54,7 @@ function fetchSunriseSunset(latitude, longitude) {
         .then(response => response.json())
         .then(data => {
             if (data.meta.code === 200) {
+                document.getElementById('timezone-display').innerText = `Timezone: [Extracted Timezone Data]`;
                 document.getElementById('timezone-display').innerText = `Timezone: ${data.data.timezone.id}`;
             }
         });
@@ -73,10 +74,7 @@ function fetchDataForDate(latitude, longitude, date, dayIndex) {
         .catch(() => showError("Error fetching data."));
 }
 
-function updateUI(data, dayIndex, date, locationName) {
-    if (locationName) {
-        document.getElementById('location-name').innerText = `Location: ${locationName}`;
-    }
+function updateUI(data, dayIndex, date) {
     let display = document.getElementById('data-display');
     let dayData = `<div class="day-data">
         <h3>Day ${dayIndex + 1} (${date}):</h3>
@@ -86,6 +84,7 @@ function updateUI(data, dayIndex, date, locationName) {
         <p><img src="logos/dusk-today.png" alt="Dusk Today Logo"><strong>Dusk:</strong>  ${data.dusk}</p>
         <p><img src="logos/daylength-today.png" alt="Day Length Today Logo"> <strong>Day Length:</strong> ${data.day_length}</p>
         <p><img src="logos/solarnoon-today.png" alt="Solar Noon Today Logo"><strong>Solar Noon:</strong>  ${data.solar_noon}</p>
+        <p><strong>Timezone:</strong> ${data.timezone}</p>
     </div>`;
     display.innerHTML += dayData;
 }
